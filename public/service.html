@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+   <!-- 헤더 영역 -->
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="inner">
+                        <h1><a href="index.html"><img src="./images/logo.png" alt="Logo"></a></h1>
+                        <ul class="nav">
+                            <li class="ms-3" id="nav-login"><a href="login.html">로그인</a></li>
+                            <li class="ms-3" id="nav-logout" style="display: none;"><a href="#">로그아웃</a></li>
+                            <li class="ms-3" id="nav-signup"><a href="join.html">회원가입</a></li>
+                            <li class="ms-3"><a href="service.html">서비스신청</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bgWrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="serviceBg">
+                        <h3>서비스 신청하기</h3>
+                        <p>성공적인 비즈니스를 위한 맞춤 메일링 서비스를 제공해드립니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="apply">
+                        <h4>서비스신청</h4>
+                    </div>
+
+                    <form name="registForm" id="registrationForm">
+                        <table class="form_area">
+                            <tr>
+                                <td class="col-sm-2 col-form-label form_tit"><label for="inputName">이름</label></td>
+                                <td class="col-sm-10 input_area"><input type="text" class="apply_input" id="inputName" placeholder="홍길동"></td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-2 col-form-label form_tit"><label for="inputEmail">이메일</label></td>
+                                <td class="col-sm-10 input_area"><input type="email" class="apply_input"  id="inputEmail" placeholder="abc123@bizbox.com"></td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-2 col-form-label form_tit"><label for="inputContact">연락처</label></td>
+                                <td class="col-sm-10 input_area"><input type="text" class="apply_input" id="inputContact" placeholder="01012345678"></td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-2 col-form-label form_tit"><label for="inputName">참가제한지역</label></td>
+                                <td class="col-sm-10 input_area">
+                                    <select class="form-select select_design" id="inputRegion">
+                                        <option value="00">전국(제한없음)</option>
+                                        <option value="11">서울</option>
+                                        <option value="26">부산</option>
+                                        <option value="27">인천</option>
+                                        <option value="28">대구</option>
+                                        <option value="29">광주</option>
+                                        <option value="31">울산</option>
+                                        <option value="30">대전</option>
+                                        <option value="36">세종</option>
+                                        <option value="41">경기</option>
+                                        <option value="51">강원</option>
+                                        <option value="43">충북</option>
+                                        <option value="44">충남</option>
+                                        <option value="52">전북</option>
+                                        <option value="46">전남</option>
+                                        <option value="48">경남</option>
+                                        <option value="47">경북</option>
+                                        <option value="50">제주</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-2 col-form-label form_tit"><label for="inputName">업무코드</label></td>
+                                <td class="col-sm-10 input_area">
+                                    <select class="form-select select_design" id="inputBusinessCode">
+                                        <option value="0">전체</option>
+                                        <option value="1">물품</option>
+                                        <option value="2">외자</option>
+                                        <option value="3">공사</option>
+                                        <option value="5">용역</option>
+                                        <option value="6">리스</option>
+                                        <option value="11">비축</option>
+                                        <option value="4">기타</option>
+                                        <option value="20">민간</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-2 col-form-label form_tit"><label for="inputIndustryCode">업종코드</label>
+                                    <div class="spaceBetween">
+                                        <span class="down"><img src="./images/down.svg">업종코드표 다운로드</span>
+                                    </div>
+                                </td>
+                                <td class="col-sm-10 input_area" id="industryCodeArea">
+                                    <div class="spaceBetween">
+                                        <!-- <span><img src="./images/alert_dark.svg">업종코드는 최대 3개까지 추가하실 수 있습니다.</span> -->
+                                        <!-- <span class="down"><img src="./images/down.svg">업종코드표 다운로드</span> -->
+                                        <span><img src="./images/alert_dark.svg">업종코드는 최대 3개까지 추가하실 수 있습니다.</span>
+                                    </div>
+                                    <div class="d-flex align-items-center posiPlus">
+                                        <button class="plus" type="button">
+                                            <img src="./images/plus.svg" id="plusBtn">
+                                        </button>
+                                        <input type="text" class="apply_input industry-code" id="inputIndustryCode" placeholder="003">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                    <div class="agree">
+                        <input type="checkbox" id="agree" class="agree_checkbox">
+                        <label for="agree" class="label_wrap">서비스 신청을 위한 개인정보 활용을 동의합니다.
+                        </label>
+                    <span class="option">자세히 보기</span>
+                    </div>
+                    <div class="privacy_area">
+                        <textarea name="textarea" rows="10" class="textarea" readonly title="개인정보 수집 동의 상세내용">
+                            ■ 수집하는 개인정보 항목
+
+                            회사는 회원가입, 상담, 서비스 신청 등등을 위해 아래와 같은 개인정보를 수집하고 있습니다.
+
+                            ◇ 수집항목 : 문의유형, 업체 명, 담당자 명, 담당자 연락처, 이메일, 문의내용, 첨부파일, 쿠키
+                            ◇ 개인정보 수집방법 : 홈페이지(문의하기) 
+
+                            ■ 개인정보의 수집 및 이용목적
+                            회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다..
+
+                            ◇ 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산
+                                콘텐츠 제공, 문의 및 불만사항 처리
+
+                            ■ 개인정보의 보유 및 이용기간
+                            원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 관계법령의 규정에 의하여 보존할 필요가 있는 경우 회사는 아래와 같이 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다.
+
+                            - 보존 항목 : 이름, 로그인ID, 결제기록, 주문정보, 배송정보
+                            - 보존 근거 : 서비스 이용의 혼선 방지
+                            - 보존 기간 : 5년 상법, 전자상거래 등에서의 소비자보호에 관한 법률 등 관계법령의 규정에 의하여 보존할 필요가 있는 경우 회사는 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다. 이 경우 회사는 보관하는 정보를 그 보관의 목적으로만 이용하며 보존기간은 아래와 같습니다.
+
+                            - 계약 또는 청약철회 등에 관한 기록 : 5년 (전자상거래등에서의 소비자보호에 관한 법률)
+                            - 대금결제 및 재화 등의 공급에 관한 기록 : 5년 (전자상거래등에서의 소비자보호에 관한 법률)
+                            - 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년 (전자상거래등에서의 소비자보호에 관한 법률)
+                            - 신용정보의 수집/처리 및 이용 등에 관한 기록 : 3년 (신용정보의 이용 및 보호에 관한 법률)
+                        </textarea>
+                    </div>
+
+                    <div class="service_apply">
+                        <button id="serviceBtn">신청하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footerBox">
+                        <div class="top">
+                            <img src="./images/logo_footer.png">
+                            <div class="sub">
+                                위드퍼스트
+                                <span class="bar"></span>
+                                대표이사: 김태환
+                                <span class="bar"></span>
+                                사업자등록번호 <br>
+                                주소 : 전라남도 나주시  우정로 10, 라동 304호
+                                <span class="bar"></span>
+                                이메일: withfirst01@gmail.com
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bot">
+                            <div class="left">
+                                <p>©withfirst All rights reserved.</p>
+                            </div>
+                            <div class="right">
+                                <a href="#">이용약관</a>
+                                <span class="bar"></span>
+                                <a href="#">개인정보처리방침</a>
+                                <span class="bar"></span>
+                                <a href="#">사업자정보확인</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            let maxFields = 3;
+            let fieldCount = 1;
+
+            $(document).on('click', '.plus', function() {
+                if(fieldCount < maxFields) {
+                    fieldCount++;
+                    $('#industryCodeArea').append(`
+                        <div class="d-flex align-items-center posiPlus new-input">
+                            <button class="minus" type="button">
+                                <img src="./images/minus.svg">
+                            </button>
+                            <input type="text" class="industry-code apply_input" placeholder="003">
+                        </div>
+                    `);
+                }
+            });
+
+            $(document).on('click', '.minus', function() {
+                $(this).closest('.new-input').remove();
+                fieldCount--;
+            });
+
+            $('.option').click(function() {
+                let privacyArea = $('.privacy_area');
+                if (privacyArea.css('display') === 'none') {
+                    privacyArea.css('display', 'block');
+                    $(this).text('닫기');
+                } else {
+                    privacyArea.css('display', 'none');
+                    $(this).text('자세히 보기');
+                }
+            });
+
+            // 서비스신청 버튼 클릭 이벤트
+            $('#serviceBtn').click(function() {
+
+                if(!$('#agree').is(':checked')) {
+                    alert('서비스 신청을 위해서는 개인정보 활용 동의가 필요합니다.');
+                    return;
+                }
+
+                // 입력된 데이터 수집
+                const name = $('#inputName').val().trim();
+                const email = $('#inputEmail').val().trim();
+                const contact = $('#inputContact').val().trim();
+                const region = $('#inputRegion').val();
+                const task = $('#inputBusinessCode').val();
+                let industryCodes = [];
+                $('.industry-code').each(function() {
+                    const industryCode = $(this).val().trim();
+                    if (industryCode) {
+                        industryCodes.push(industryCode);
+                    }
+                });
+
+                // 필수 입력 필드가 비어 있는지 확인
+                if (!name || !email || !contact || !region || !task || industryCodes.length === 0) {
+                    alert('모든 입력 필드를 채워주세요.');
+                    return;
+                }
+
+                // industryCodes 배열을 문자열로 변환
+                const industryCodesString = industryCodes.join(',');
+
+                // 서버로 데이터 전송
+                console.log("Sending data to server:");
+                console.log({
+                    name: name,
+                    email: email,
+                    contact: contact,
+                    area: region,
+                    task : task,
+                    industryCodes: industryCodesString
+                });
+
+                $.ajax({
+                    url: 'http://192.168.0.18:3001/biz/get-bms',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        email: email,
+                        name: name,
+                        phone_number: contact,
+                        industry_code: industryCodesString,
+                        area: region,
+                        task: task
+                    }),
+                    success: function(response) {
+                        console.log("Success response:", response);
+                        alert('신청이 완료되었습니다.');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error details:", xhr, status, error);
+                        alert('신청 중 오류가 발생했습니다: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

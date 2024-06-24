@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIZBOX : 로그인</title>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="inner">
+                        <h1><a href="index.html"><img src="./images/logo.png" alt="Logo"></a></h1>
+                        <ul class="nav">
+                            <li class="ms-3" id="nav-login"><a href="login.html">로그인</a></li>
+                            <li class="ms-3" id="nav-logout" style="display: none;"><a href="#">로그아웃</a></li>
+                            <li class="ms-3" id="nav-signup"><a href="join.html">회원가입</a></li>
+                            <li class="ms-3"><a href="service.html">서비스신청</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 로그인 영역 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="loginWrap">
+                    <div class="input">
+                        <img src="./images/logo.png">
+                        <input type="text" class="textInput" id="idInput" placeholder="아이디">
+                        <div class="textInputWrapper">
+                            <input type="password" class="textInput" id="passwordInput" placeholder="비밀번호">
+                            <span class="visual" id="passwordToggleImage">
+                                <img src="images/visual.png" id="toggleImage">
+                            </span>
+                        </div>
+                    <div>
+                    <div class="inputSub">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="autoLoginCheckbox">
+                            <label class="form-check-label labelFont" for="autoLoginCheckbox">
+                              자동로그인
+                            </label>
+                        </div>
+                        <div>
+                            <ul class="inputSubNav">
+                                <li><a href="id_search.html">아이디 찾기</a></li>
+                                <li><a href="pw_search.html">비밀번호 찾기</a></li>
+                             </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="loginbtnwrap">
+                        <button id="loginButton">로그인</button>
+                    </div>
+                    <div class="join_text">
+                        <p>아직회원이 아니신가요?</p>
+                        <a href="join.html">회원가입</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 영역 -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footerBox">
+                        <div class="top">
+                            <img src="./images/logo_footer.png">
+                            <div class="sub">
+                                위드퍼스트
+                                <span class="bar"></span>
+                                대표이사: 김태환
+                                <span class="bar"></span>
+                                사업자등록번호 <br>
+                                주소 : 전라남도 나주시  우정로 10, 라동 304호
+                                <span class="bar"></span>
+                                이메일: withfirst01@gmail.com
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bot">
+                            <div class="left">
+                                <p>©withfirst All rights reserved.</p>
+                            </div>
+                            <div class="right">
+                                <a href="#">이용약관</a>
+                                <span class="bar"></span>
+                                <a href="#">개인정보처리방침</a>
+                                <span class="bar"></span>
+                                <a href="#">사업자정보확인</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+
+    <!-- <script>
+        $(document).ready(function() {
+            
+            // 자동 로그인 확인 및 로그인 시도
+            if(localStorage.getItem('autoLogin') === 'true') {
+                const savedId = localStorage.getItem('id');
+                const savedPassword = localStorage.getItem('password');
+
+                if (savedId && savedPassword) {
+                    login(savedId, savedPassword);
+                }
+            }
+
+            $('#loginButton').click(function() {
+                // 사용자가 입력한 아이디, 비밀번호
+                const id = $('#inputId').val();
+                const password = $('#passwordInput').val();
+                const autoLogin = $('#autoLoginCheckbox').is(':checked');
+
+                if (autoLogin) {
+                    // 자동 로그인 정보 저장
+                    localStorage.setItem('autoLogin', 'true');
+                    localStorage.setItem('id', id);
+                    localStorage.setItem('password', password);
+                } else {
+                    // 자동 로그인 정보 제거
+                    localStorage.removeItem('autoLogin');
+                    localStorage.removeItem('id');
+                    localStorage.removeItem('password');
+                }
+
+                login(id, password);
+            });
+
+            // 로그인 함수
+            function login(id, password) {
+                // formData 객체 생성
+                const formData = {
+                    id: id,
+                    password: password
+                };
+
+                //ajax 요청 보내기
+                $.ajax({
+                    url: 'http://192.168.0.18:3001/docs/biz/login',
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        console.log('로그인 성공: ', response);
+                        window.location.href = 'index.html';
+                    },
+                    error: function(error) {
+                        console.log('로그인 실패: ', error);
+                        alert('로그인에 실패하였습니다. 다시 시도해 주세요.');
+                    }
+                });
+            }
+
+            //비밀번호 표시 토글
+            $('#passwordToggleImage').click(function() {
+                const passwordInput = $('#passwordInput');
+                const toggleImage =$('#toggleImage');
+
+                //비밀번호 입력 필드의 현재 타입 확인
+                if(passwordInput.attr('type') === 'password') {
+                    // 비밀번호를 보여주기 위해 타입을 'text'로 변경
+                    passwordInput.attr('type', 'text');
+                    // 비밀번호가 보이는 상태를 나타내기 위해 이미지 변경
+                    toggleImage.attr('src', 'images/hidden.png');
+                } else {
+                    // 비밀번호를 숨기기 위해 타입을 'password'로 변경
+                    passwordInput.attr('type', 'password');
+                    // 비밀번호가 숨겨진 상태를 나타내기 위해 이미지를 초기 상태로 변경
+                    toggleImage.attr('src', 'images/visual.png');
+                }
+            });
+
+            // 포커스와 값의 존재에 따라 토글 이미지 표시/숨김 관리
+            $('#passwordInput').on('focus blur input', function() {
+                const $wrapper = $(this).closest('.textInputWrapper');
+
+                // 입력 필드에 값이 있는지 확인
+                if ($(this).val()) {
+                    // 값이 있으면 클래스 추가
+                    $wrapper.addClass('has-value');
+                } else {
+                    // 값이 없으면 클래스 제거
+                    $wrapper.removeClass('has-value');
+                }
+
+                // 입력 필드가 포커스 상태인지 확인
+                if ($(this).is(':focus')) {
+                    // 포커스 상태이면 클래스 추가
+                    $wrapper.addClass('focused');
+                } else {
+                    // 포커스 상태가 아니면 클래스 제거
+                    $wrapper.removeClass('focused');
+                }
+            });
+        });
+    </script> -->
+</body>
+</html>
